@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var SRC_DIR = path.resolve(__dirname,'./src');
 var DIST_DIR = path.resolve(__dirname,'dist');
@@ -22,7 +23,8 @@ var config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 }
 
