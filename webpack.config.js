@@ -2,27 +2,32 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-var SRC_DIR = path.resolve(__dirname,'./src');
+var SRC_DIR = path.resolve(__dirname,'');
 var DIST_DIR = path.resolve(__dirname,'dist');
 
 var config = {
 
     entry: SRC_DIR + '/index.js',
     output: {
-            path: DIST_DIR + '/src',
-            filename: 'bundle.js'
+        path: DIST_DIR + '/src',
+        filename: 'bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     module: {
        rules:[
            { test:/\.js$|jsx/, use:'babel-loader'},
-           { test:/^\.(css)$/ , use:['style-loader','css-loader']},
-           { test:/^\.(jpe?g|png|gif)$/i, use:[ { loader:'file-loader', options:{ outputPath: "assets/" }} ] }
+           { test:/\.(css)$/i , use:['style-loader','css-loader?modules']},
+           { test:/\.(jpe?g|png|gif)$/i, use:[ { loader:'file-loader', options:{ outputPath: "assets/" }} ] },
+           { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
        ]   
     },
     mode:'development',
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'index.html'
         }),
         new CleanWebpackPlugin()
     ]

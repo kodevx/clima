@@ -1,0 +1,24 @@
+/* @font-face {
+    font-family: Gotham;
+    src: url('../../Fonts/Gotham-Bold.otf') format('otf'),
+         url('../../Fonts/Gotham-Light.otf') format('otf'),
+         url('../../Fonts/GothamMedium_0.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+.root{
+    border: 4px solid white;
+    background-color: #FFC240;
+    color: white;
+    font-family: 'Gotham';
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 7px 7px 7px 20px; 
+    outline: none;
+    border-radius: 40px;
+}
+
+.root::placeholder {
+    color: white;
+}
