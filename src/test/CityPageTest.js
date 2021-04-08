@@ -19,7 +19,7 @@ const CityPageTest = (props) => {
   const [ data, setData ] = useState(null);
 
   useEffect(()=>{
-      axios.get('http://api.openweathermap.org/data/2.5/weather?q=Abu Dhabi&cnt=16&APPID=4aa8b8963f247e4ae36d3430d41bddd6&units=metric')
+      axios.get('http://api.openweathermap.org/data/2.5/weather?q=Abu Dhabi&cnt=16&APPID=API_KEY&units=metric')
       .then(res => {
         console.log('APIData: ',res.data);
         setData("Weather Data",res.data);
