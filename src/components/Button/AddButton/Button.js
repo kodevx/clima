@@ -9,7 +9,7 @@ const Button = props => {
     const cls = props.classes ? props.classes: classes.root;
 
     return(
-       <button className={cls}> {props.children} </button>
+       <button className={cls} {...props}> {props.children} </button>
     );
 }
 
