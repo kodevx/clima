@@ -15,13 +15,14 @@ var config = {
     },
     devServer: {
         historyApiFallback: true,
+        port: 8000
     },
     module: {
        rules:[
            { test:/\.js$|jsx/, use:'babel-loader'},
-           { test:/\.(css)$/i , use:['style-loader','css-loader?modules']},
+           { test:/\.(css)$/i , use:['style-loader','css-loader'/*'css-loader?modules'*/]},  // Uncomment to render CSS Modules styles
            { test:/\.(jpe?g|png|gif)$/i, use:[ { loader:'file-loader', options:{ outputPath: "assets/" }} ] },
-           { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+           { test: /\.(png|woff|woff2|eot|ttf|svg|otf)$/, loader: 'url-loader?limit=100000' }
        ]   
     },
     mode:'development',

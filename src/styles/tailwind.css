@@ -1,0 +1,36 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer base {
+
+  @font-face {
+    font-family: GothamBold;
+    src: url(/assets/Fonts/Gotham/Gotham-Bold-webfont.woff) format('woff'),
+         url(/assets/Fonts/Gotham/Gotham-Bold-webfont.woff2) format('woff2'),
+         url(/assets/Fonts/Gotham/Gotham-Bold-webfont.svg) format('svg')
+  }
+  
+  @font-face {
+    font-family: GothamLight;
+    src: url(/assets/Fonts/Gotham/Gotham-Light-webfont.woff) format('woff'),
+         url(/assets/Fonts/Gotham/Gotham-Light-webfont.woff2) format('woff2'),
+         url(/assets/Fonts/Gotham/Gotham-Light-webfont.svg) format('svg')
+  }
+
+  @font-face {
+    font-family: GothamMedium;
+    src: url(/assets/Fonts/Gotham/Gotham-Medium-webfont.woff) format('woff'),
+         url(/assets/Fonts/Gotham/Gotham-Medium-webfont.woff2) format('woff2'),
+         url(/assets/Fonts/Gotham/Gotham-Medium-webfont.svg) format('svg')
+  }
+
+  @font-face {
+    font-family: Lovelo;
+    src: url(/assets/Fonts/Lovelo/Lovelo-webfont.woff) format('woff'),
+         url(/assets/Fonts/Lovelo/Lovelo-webfont.woff2) format('woff2'),
+         url(/assets/Fonts/Lovelo/Lovelo-webfont.svg) format('svg')
+  }
+}
