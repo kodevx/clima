@@ -13,22 +13,42 @@ var config = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devServer: {
-        historyApiFallback: true,
-        port: 8000
-    },
     module: {
        rules:[
-           { test:/\.js$|jsx/, use:'babel-loader'},
-           { test:/\.(css)$/i , use:['style-loader','css-loader'/*'css-loader?modules'*/]},  // Uncomment to render CSS Modules styles
-           { test:/\.(jpe?g|png|gif)$/i, use:[ { loader:'file-loader', options:{ outputPath: "assets/" }} ] },
+           { test:/\.js$|jsx/, use:'babel-loader' },
+           { 
+             test:/\.(css)$/i ,
+             use: [
+                'style-loader',
+                { 
+                  loader: 'css-loader', 
+                  options: {
+                      sourceMap: true,
+                    //   modules: {                   // TODO: Enable CSS Modules with Tailwind
+                    //    localIdentName: '[name]-[local]-[hash:base64:3]',
+                    //   }
+                  }
+                }
+             ]  
+           },
+           { test:/\.(jpe?g|png|gif)$/i, use:[ { loader:'file-loader', options:{ outputPath: 'assets/' }} ] },
            { test: /\.(png|woff|woff2|eot|ttf|svg|otf)$/, loader: 'url-loader?limit=100000' }
        ]   
     },
     mode:'development',
+    devServer: {
+        hot: true,
+        historyApiFallback: true,
+        port: 10000
+    },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            filename: 'index.html',
+            template: './index.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true
+            }
         }),
         new CleanWebpackPlugin()
     ]
