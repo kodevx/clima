@@ -3,9 +3,9 @@ import React from 'react'
 const Icon = (props) =>{
 
     return(
-        <div>
-          <img {...props}/>
-        </div>
+        <React.Fragment>
+          <img {...props} />
+        </React.Fragment>
     )
 }
 

@@ -1,15 +1,12 @@
 import React, { Children } from 'react';
-import defaultClasses from './Button.css';
-import { mergeClasses } from '../../classify';
 
-const Button = props => {
+const Button = ({ children, classes }) => {
     
-    const classes = mergeClasses(props.classes,defaultClasses);
-
-    const cls = props.classes ? props.classes: classes.root;
-
     return(
-       <button className={cls}> {props.children} </button>
+       <button className={classes? classes
+                : "p-4 md:p-2 my-3 rounded-xl hover:shadow-2xl focus:outline-none hover:bg-gray-100 dark:bg-custom-greyish flex justify-center items-center transition-all duration-300 ease-in-out"}> 
+         {children} 
+       </button>
     );
 }
 

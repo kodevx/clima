@@ -52,8 +52,14 @@ const reducer = (state = initState, action) => {
     switch (action.type) {
         case actions.CITY_ADDED:
             return {
-                 ...state,
-                 city: [...state.city,action.payload]
+                ...state,
+                city: [...state.city, action.payload]
+            };
+
+        case actions.SET_THEME_MODE:
+            return {
+                ...state,
+                theme: action.payload
             };
         default: return state;
     }

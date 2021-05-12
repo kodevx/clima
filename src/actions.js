@@ -9,3 +9,8 @@ export const cityRemoved = (data) => ({
     type: actions.CITY_REMOVED,
     payload: data
 });
+
+export const setThemeMode = (data) => ({
+    type: actions.SET_THEME_MODE,
+    payload: data
+});

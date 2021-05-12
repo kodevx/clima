@@ -15,10 +15,17 @@ module.exports = {
          teal: colors.teal,
          lightBlue: colors.lightBlue,
          cyan: colors.cyan,
-         grey: colors.coolGray,
+         gray: colors.gray,
+         coolGray: colors.coolGray,
+         orange: colors.orange,
+         lime: colors.lime,
+         lightBlue: colors.lightBlue,
+
+        'custom-greyish':'#042127',
         'darker-orange': '#ff6600' // Adding Custom Colors 
       },
-      transform: ['hover', 'focus']
+      transform: ['hover', 'focus'],
+      transitionProperty: ['hover', 'focus'],
     },
   },
   variants: {
