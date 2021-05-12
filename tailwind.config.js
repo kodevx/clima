@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -15,9 +15,10 @@ module.exports = {
          teal: colors.teal,
          lightBlue: colors.lightBlue,
          cyan: colors.cyan,
-
+         grey: colors.coolGray,
         'darker-orange': '#ff6600' // Adding Custom Colors 
-      }
+      },
+      transform: ['hover', 'focus']
     },
   },
   variants: {
