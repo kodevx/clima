@@ -1,19 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom';
-import WeatherInfo from './widgets/WeatherInfo';
+
+import CityWeather from './widgets/CityWeather';
 
 const Weather = ({ cityList }) =>{
 
-    const { cityName } = useParams();
+    const { searchCity } = useParams();
 
-    console.log("Search City Text: ",cityName);
+    console.log("Search City Text: ",searchCity);
 
     return (
-      <div className="p-4 md:p-2 bg-white dark:bg-coolGray-900 transition-all duration-500 ease-in-out">
-        {weatherInfo && weatherInfo.length ? 
-            cityList.map((cityWeather) => { 
+      <div className="p-8 md:p-10 bg-white dark:bg-black transition-all duration-400 ease-in-out">
+        {cityList && cityList.length ? 
+            cityList.map((weatherData) => { 
                return (
-                  <WeatherInfo {...cityWeather}/>
+                  <CityWeather key={weatherData.id} {...weatherData}/>
                )
             }): null}
       </div>

@@ -12,7 +12,7 @@ const Routes = () => {
              <Route exact path="/">
                <Home />
              </Route>
-             <Route exact path="/weather">
+             <Route exact path="/weather/:searchCity">
                <Weather />
              </Route>      
              {/* <Route exact path="/city/:name">   // TODO: Implement CityInfo
