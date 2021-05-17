@@ -1,17 +1,6 @@
 import React ,{ useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-import ImgLayout from '../component/Elements/Layout';
-import Title from '../component/Elements/Title';
-import CityList from '../component/Elements/CityList';
-import Wrapper from '../component/Elements/Wrapper';
-import City from '../component/Elements/City';
 import Loading from './Loading.js';
-
-let Text = styled(Title)`
-    top: 100px;
-    left: 29%;
-`;
 
 const CityPageTest = (props) => {
 
@@ -19,15 +8,15 @@ const CityPageTest = (props) => {
   const [ data, setData ] = useState(null);
 
   useEffect(()=>{
-      axios.get('http://api.openweathermap.org/data/2.5/weather?q=Abu Dhabi&cnt=16&APPID=API_KEY&units=metric')
+      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=AbuDhabi&cnt=16&APPID=${process.env.WEATHER_API_KEY}&units=metric`)
       .then(res => {
-        console.log('APIData: ',res.data);
+        console.log('APIData: ',res);
         setData("Weather Data",res.data);
-        // setTimeout(()=>{ setload(!load) },9000);
+        setTimeout(()=>{ setload(prevState => !prevState) },3000);
       }).catch(err=>{
         console.log(err);
       })
-      showData();
+      // showData();
   },[]);
 
   const showData = () => {
@@ -35,15 +24,14 @@ const CityPageTest = (props) => {
   }
 
   return(
-      <Wrapper>
+      <>
         { load ? <Loading /> :
           <div>
-            <ImgLayout src={'../../img/BckImg.jpg'} alt='None'/>
-            <Text> W E A T H E R </Text>
+            <h4>Weather API Test</h4>
             {/* <CityList />  */}
           </div>
         }
-      </Wrapper>
+      </>
   );
 }
 

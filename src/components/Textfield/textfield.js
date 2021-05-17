@@ -1,6 +1,4 @@
 import React from 'react';
-import { mergeClasses } from '../../classify.js';
-import defaultClasses from './textfield.css';
 
 const Textfield = props =>{
 

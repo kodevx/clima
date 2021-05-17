@@ -1,6 +1,4 @@
 import React from 'react';
-import { mergeClasses } from '../../classify';
-import defaultClasses from './Home.css';
 import CityText from '../CityText';
 import City from '../Weather/City';
 
