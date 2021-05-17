@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import ThemeSwitch from '../ThemeSwitch';
 import Icon from '../Icon';
-import Button from '../Button/Button';
+import Button from '../Button';
 
 import MenuIcon from '../../../assets/icons/menu.svg';
 
