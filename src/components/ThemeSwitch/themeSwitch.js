@@ -20,10 +20,10 @@ const ThemeSwitch = ({ theme, setThemeMode, }) => {
 
     return (
         <React.Fragment>
-          <button onClick={handleToggle} className="p-4 md:p-2 my-3 rounded-xl focus:outline-none hover:bg-gray-100 dark:bg-custom-greyish flex justify-center items-center transition-all duration-300 ease-in-out">
+          <button onClick={handleToggle} className="p-2 md:p-2 rounded-xl focus:outline-none bg-transparent hover:bg-hover-btn hover:bg-opacity-50 dark:bg-dark-bck-header dark:bg-opacity-52 dark:hover:bg-dark-btn-primary dark:hover:bg-opacity-50 flex justify-center items-center transition-all duration-300 ease-in-out">
             {isDarkMode
-              ? <Icon src={DarkMode} height='35px' width='35px' alt={"dark-mode-icon"}/>
-              : <Icon src={LightMode} height='35px' width='35px' alt={"light-mode-icon"}/>}
+              ? <Icon src={DarkMode} height='30px' width='30px' alt={"dark-mode-icon"}/>
+              : <Icon src={LightMode} height='30px' width='30px' alt={"light-mode-icon"}/>}
           </button>    
         </React.Fragment>    
     )

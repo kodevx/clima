@@ -22,8 +22,34 @@ module.exports = {
          lightBlue: colors.lightBlue,
 
         'custom-greyish':'#042127',
-        'darker-orange': '#ff6600' // Adding Custom Colors 
+        'darker-orange': '#ff6600', // Adding Custom Colors 
+
+        /*  Light Theme Colors  */
+        'btn-primary': '#4ACFAC',
+        'bck-primary': '#FAC689',
+        'bck-warning': '#EF4B56',
+        'hover-btn': '#EEEEEE',
+
+        /*  Dark Theme Colors  */
+        'dark-black-primary': '#121212',
+        'dark-black-secondary': '#1E1E1E',
+        'dark-btn-primary': '#373737',
+        'dark-btn-secondary': '#FAC68A',
+        'dark-text-gray': '#808080',
+        'dark-text-green': '#83DEC4',
+        'dark-bck-warning': '#EF4B56',
+        'dark-bck-header': '#1D1D1D',
+        'dark-search-back': '#353535'
+        
       },
+      backgroundOpacity: {
+          '52':'0.52',
+          '87':'0.87' 
+      },
+      borderRadius: {
+        'large': '26px'
+      },
+
       transform: ['hover', 'focus'],
       transitionProperty: ['hover', 'focus'],
     },

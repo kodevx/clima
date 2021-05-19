@@ -9,13 +9,13 @@ import MenuIcon from '../../../assets/icons/menu.svg';
 const Header = () =>{
 
     return(
-        <div className="px-4 md:px-2 flex flex-row justify-between items-center dark:text-white dark:bg-coolGray-800 transition-all duration-100 ease-in-out">
-          <Button classes="p-4 md:p-2 rounded-xl hover:shadow-2xl focus:outline-none hover:bg-gray-100 dark:bg-custom-greyish flex justify-center items-center transition-all duration-300 ease-in-out">
+        <div className="px-4 py-2 md:px-5 md:py-3 flex flex-row justify-between items-center text-black dark:text-dark-btn-secondary dark:bg-dark-black-primary transition-all duration-100 ease-in-out">
+          <Button classes="p-2 md:p-2 rounded-xl focus:outline-none hover:bg-hover-btn hover:bg-opacity-50 dark:bg-dark-bck-header dark:bg-opacity-52 dark:hover:bg-dark-btn-primary dark:hover:bg-opacity-50 flex justify-center items-center transition-all duration-100 ease-in-out">
             <Icon 
               src={MenuIcon}
-              height='20x' 
-              width='20px' 
-              alt={"menu-icon"}
+              height='25x' 
+              width='25px' 
+              alt="menu-icon"
             />
           </Button>
           <Link to="/weather">Clima Icon</Link>
