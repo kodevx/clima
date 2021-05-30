@@ -42,14 +42,18 @@ module.exports = {
         'dark-search-back': '#353535'
         
       },
-      backgroundOpacity: {
-          '52':'0.52',
-          '87':'0.87' 
-      },
       borderRadius: {
+        // 'medium': '18px',
         'large': '26px'
       },
-
+      textOpacity: {
+        '52':'0.52',
+      },
+      backgroundOpacity: {
+          '52':'0.52',
+          '87':'0.87',
+          '75':'0.75' 
+      },
       transform: ['hover', 'focus'],
       transitionProperty: ['hover', 'focus'],
     },

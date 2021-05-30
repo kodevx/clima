@@ -2,12 +2,12 @@ import React from 'react'
 import Header from '../Header';
 import Footer from '../Footer';
 
-const Main = (props) => {
+const Main = ({ children }) => {
 
     return(
         <div className='flex flex-col'>
           <Header />
-            {props.children}
+            {children}
           <Footer />
         </div>
     )
