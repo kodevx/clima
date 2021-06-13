@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import WeatherIcon from '../WeatherIcon/weatherIcon';
 import Text from '../../../Text';
 import Button from '../../../Button';
-import useCityWeather from '../../../hooks/Weather/useWeather';
+import useCityWeather from '../../../../hooks/CityWeathers/useCityWeather';
 
 import { WEATHER_PARAMS } from '../../../../constants/constants';
 
@@ -16,12 +16,12 @@ const CityWeather = ({ name, wind, main, weather }) => {
       handleToggle 
     } = useCityWeather({ requiredData });
     
-    const moreWeatherInfo = useMemo(() => {
+    const moreWeatherInfo = useMemo(() => (
         <div className="transition-all duration-300 ease-in-out">
           <div className="grid grid-cols-3 gap-4">
             {Object.entries(WEATHER_PARAMS).map(([key, value])=> {
               return (
-                <div className="justify-self-center items-center">
+                <div key={value} className="justify-self-center items-center">
                   <div>{key}</div>
                   <div>{requiredData[value]}</div>
                 </div>
@@ -39,7 +39,7 @@ const CityWeather = ({ name, wind, main, weather }) => {
             </div> 
           </div>         
         </div>
-    },[weatherData, WEATHER_PARAMS])
+    ),[weatherData, WEATHER_PARAMS]);
 
     return (  
         <div className="p-5 md:p-10 md:rounded-lg bg-white dark:bg-opacity-10 shadow-lg flex flex-col transition-all duration-500 ease-in-out">
@@ -53,10 +53,10 @@ const CityWeather = ({ name, wind, main, weather }) => {
             {isShowMore ? moreWeatherInfo : null}
             <div className="flex justify-center items-center">
               <Button 
-                classes="h-11 w-48 outline-none rounded-xl font-gothamBold text-white bg-btn-primary hover:bg-opacity-75"
-                // onClick={handleToggle}
+                classes="h-11 w-48 outline-none focus:outline-none rounded-xl font-gothamBold text-white bg-btn-primary hover:bg-opacity-75"
+                onClick={handleToggle}
               >
-                V
+                {isShowMore ? 'ᐱ' :'V'}
               </Button>
             </div>  
           </div>

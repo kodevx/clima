@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 const Home = lazy(() => import('../Home'));
 const CityWeathers = lazy(() => import('../CityWeathers'));
+const Search = lazy(() => import('../Search'));
 // const CityInfo = lazy(() => import('../CityInfo'));
 
 const Routes = () => {
@@ -12,12 +13,12 @@ const Routes = () => {
              <Route exact path="/">
                <Home />
              </Route>
-             <Route exact path="/cityWeathers">
+             <Route exact path="/weathers">
                <CityWeathers />
              </Route>
-             {/* <Route exact path="/searchWeather?city=dubai">  // TODO: Implement Search City Weather Page
-               <SearchWeather />
-             </Route>        */}
+             <Route exact path="/search"> 
+               <Search />
+             </Route>       
              {/* <Route exact path="/city/:name">  // TODO: Implement CityInfo
                <CityInfo />
              </Route> */}

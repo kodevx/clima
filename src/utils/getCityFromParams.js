@@ -1,7 +1,6 @@
-import React from 'react'
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const useWeather = (props) =>{
+export const getCityFromParams = (props) =>{
 
     const history = useHistory();
 
@@ -13,8 +12,6 @@ const useWeather = (props) =>{
     const cityName = searchParams.get('city');
 
     return {
-       cityName
+      cityName
     }
 }
-
-export default useWeather;

@@ -8,5 +8,5 @@ export const WEATHER_PARAMS = {
     'Pressure':'pressure',
     'Humidity':'humidity',
     'Speed':'speed',
-    'Degree':'deg'
+    // 'Degree':'deg'
 };

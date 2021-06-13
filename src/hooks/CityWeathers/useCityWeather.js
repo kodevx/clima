@@ -1,18 +1,19 @@
-import React,{ useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
+import { WEATHER_PARAMS } from '../../constants/constants';
 
 const useCityWeather = ({ requiredData }) => {
 
-    const [isShowMore, setIsShowMore] = React.useState(true);
+    const [isShowMore, setIsShowMore] = useState(false);
 
     const handleToggle = useCallback(() => {
       setIsShowMore(prevState => !prevState);
-    },[isShowMore]);
+    },[setIsShowMore]);
 
     const weatherData = useMemo(   
         () => {
-            const refinedData;   
+            let refinedData = [];   
             Object.entries(WEATHER_PARAMS).map(([key, value]) => {
-                refinedData.push({ label: key, value: requiredData[value] })
+                refinedData.push({ label: key, value: requiredData[value] });
             });
 
             return refinedData;

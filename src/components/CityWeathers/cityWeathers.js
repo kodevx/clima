@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import CityWeather from './widgets/CityWeather';
-import useWeather from '../../hooks/Weather/useWeather';
 
 const CityWeathers = ({ cityList }) => {
 
